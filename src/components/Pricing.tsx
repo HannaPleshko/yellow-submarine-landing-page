@@ -16,7 +16,7 @@ const Pricing = () => {
         "Материалы включены",
         "Домашние задания"
       ],
-      color: "from-blue-500 to-blue-600",
+      color: "from-blue-400 to-blue-500",
       popular: false
     },
     {
@@ -35,7 +35,7 @@ const Pricing = () => {
         "Отчеты о прогрессе",
         "Гибкая заморозка"
       ],
-      color: "from-yellow-500 to-yellow-600",
+      color: "from-amber-400 to-amber-500",
       popular: true,
       badge: "Акция!"
     },
@@ -53,19 +53,19 @@ const Pricing = () => {
         "Материалы включены",
         "Дружественная атмосфера"
       ],
-      color: "from-sky-500 to-sky-600",
+      color: "from-sky-400 to-sky-500",
       popular: false
     }
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50">
+    <section id="pricing" className="py-20 bg-gradient-to-br from-blue-50/50 via-white to-sky-50/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            <span className="text-blue-600">Цены</span> на обучение
+        <div className="text-center mb-16 animate-slide-up">
+          <h2 className="text-4xl lg:text-5xl font-serif font-bold text-gray-800 mb-6">
+            <span className="text-blue-500">Цены</span> на обучение
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
             Прозрачные цены без скрытых платежей. Выберите подходящий вариант обучения.
           </p>
         </div>
@@ -74,15 +74,15 @@ const Pricing = () => {
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in border border-sky-100 ${
-                plan.popular ? 'ring-4 ring-yellow-400 ring-opacity-50' : ''
+              className={`relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500 animate-fade-in border border-sky-100/50 hover:shadow-2xl group ${
+                plan.popular ? 'ring-4 ring-amber-300/50' : ''
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute top-4 right-4 z-10">
-                  <div className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
+                  <div className="bg-amber-400 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-1 animate-glow">
                     <Star size={14} className="fill-current" />
                     <span>{plan.badge}</span>
                   </div>
@@ -90,18 +90,19 @@ const Pricing = () => {
               )}
 
               {/* Header */}
-              <div className={`bg-gradient-to-r ${plan.color} p-6 text-white relative`}>
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
-                  <p className="text-white/90 mb-4">{plan.subtitle}</p>
+              <div className={`bg-gradient-to-r ${plan.color} p-6 text-white relative overflow-hidden`}>
+                <div className="absolute inset-0 bg-white/10 animate-pulse"></div>
+                <div className="text-center relative z-10">
+                  <h3 className="text-2xl font-serif font-bold mb-2">{plan.title}</h3>
+                  <p className="text-white/90 mb-4 font-light">{plan.subtitle}</p>
                   <div className="flex items-center justify-center space-x-2">
                     {plan.originalPrice && (
-                      <span className="text-2xl line-through text-white/70">{plan.originalPrice}</span>
+                      <span className="text-2xl line-through text-white/70 font-serif">{plan.originalPrice}</span>
                     )}
-                    <span className="text-4xl lg:text-5xl font-bold">{plan.price}</span>
+                    <span className="text-4xl lg:text-5xl font-serif font-bold">{plan.price}</span>
                     <div className="text-left">
-                      <div className="text-lg">{plan.currency}</div>
-                      <div className="text-sm text-white/90">{plan.duration}</div>
+                      <div className="text-lg font-semibold">{plan.currency}</div>
+                      <div className="text-sm text-white/90 font-light">{plan.duration}</div>
                     </div>
                   </div>
                 </div>
@@ -111,11 +112,11 @@ const Pricing = () => {
               <div className="p-6">
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-sky-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <li key={featureIndex} className="flex items-center space-x-3 group">
+                      <div className="w-5 h-5 bg-sky-400 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                         <Check size={12} className="text-white" />
                       </div>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-700 font-light">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -123,8 +124,8 @@ const Pricing = () => {
                 {/* CTA Button */}
                 <a
                   href="#contact"
-                  className={`w-full bg-gradient-to-r ${plan.color} text-white py-3 px-6 rounded-lg font-semibold text-center block hover:shadow-lg transform hover:scale-105 transition-all duration-300 ${
-                    plan.popular ? 'animate-pulse' : ''
+                  className={`w-full bg-gradient-to-r ${plan.color} text-white py-3 px-6 rounded-2xl font-semibold text-center block hover:shadow-lg transform hover:scale-105 transition-all duration-300 group-hover:shadow-xl ${
+                    plan.popular ? 'animate-glow' : ''
                   }`}
                 >
                   {plan.popular ? (
@@ -143,14 +144,14 @@ const Pricing = () => {
 
         {/* Additional Info */}
         <div className="mt-16 text-center animate-fade-in">
-          <div className="bg-gradient-to-r from-yellow-100 to-sky-100 rounded-2xl p-8 max-w-4xl mx-auto border border-blue-200">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+          <div className="bg-gradient-to-r from-amber-100/50 to-sky-100/50 backdrop-blur-sm rounded-3xl p-8 max-w-4xl mx-auto border border-blue-200/50 hover:shadow-xl transition-all duration-300">
+            <h3 className="text-2xl font-serif font-bold text-gray-800 mb-4">
               🎁 Специальное предложение!
             </h3>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-gray-700 mb-4 font-light">
               При покупке абонемента на 8 индивидуальных занятий — скидка 20 BYN!
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 font-light">
               Акция действует ограниченное время. Количество мест по акционной цене ограничено.
             </p>
           </div>
