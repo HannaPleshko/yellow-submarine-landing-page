@@ -1,63 +1,49 @@
-
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const testimonials = [
-    {
-      name: "Анна Петрова",
-      role: "Мама ученицы (7 лет)",
-      text: "Мария - потрясающий преподаватель! Дочка с удовольствием ходит на занятия. За полгода значительно улучшился словарный запас.",
-      rating: 5,
-      avatar: "👩‍💼"
-    },
-    {
-      name: "Игорь Сидоров",
-      role: "Студент (22 года)",
-      text: "Занимаюсь для работы. Мария помогла мне подготовиться к собеседованию на английском. Очень довольны результатом!",
-      rating: 5,
-      avatar: "👨‍🎓"
-    },
-    {
-      name: "Елена Иванова",
-      role: "Мама ребенка с РАС",
-      text: "Мария нашла подход к моему сыну с аутизмом. Он впервые с радостью изучает английский. Огромная благодарность!",
-      rating: 5,
-      avatar: "👩‍🏫"
-    },
-    {
-      name: "Дмитрий Козлов",
-      role: "Бизнесмен (35 лет)",
-      text: "Индивидуальные занятия помогли мне улучшить деловой английский. Мария всегда готовит интересные материалы.",
-      rating: 5,
-      avatar: "👨‍💼"
-    },
-    {
-      name: "Ольга Смирнова",
-      role: "Мама близнецов (5 лет)",
-      text: "Групповые занятия для моих близнецов - это праздник! Дети обожают Марию и с нетерпением ждут каждого урока.",
-      rating: 5,
-      avatar: "👩‍👧‍👦"
-    }
-  ];
-
+  const testimonials = [{
+    name: "Анна Петрова",
+    role: "Мама ученицы (7 лет)",
+    text: "Мария - потрясающий преподаватель! Дочка с удовольствием ходит на занятия. За полгода значительно улучшился словарный запас.",
+    rating: 5,
+    avatar: "👩‍💼"
+  }, {
+    name: "Игорь Сидоров",
+    role: "Студент (22 года)",
+    text: "Занимаюсь для работы. Мария помогла мне подготовиться к собеседованию на английском. Очень довольны результатом!",
+    rating: 5,
+    avatar: "👨‍🎓"
+  }, {
+    name: "Елена Иванова",
+    role: "Мама ребенка с РАС",
+    text: "Мария нашла подход к моему сыну с аутизмом. Он впервые с радостью изучает английский. Огромная благодарность!",
+    rating: 5,
+    avatar: "👩‍🏫"
+  }, {
+    name: "Дмитрий Козлов",
+    role: "Бизнесмен (35 лет)",
+    text: "Индивидуальные занятия помогли мне улучшить деловой английский. Мария всегда готовит интересные материалы.",
+    rating: 5,
+    avatar: "👨‍💼"
+  }, {
+    name: "Ольга Смирнова",
+    role: "Мама близнецов (5 лет)",
+    text: "Групповые занятия для моих близнецов - это праздник! Дети обожают Марию и с нетерпением ждут каждого урока.",
+    rating: 5,
+    avatar: "👩‍👧‍👦"
+  }];
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setCurrentIndex(prev => (prev + 1) % testimonials.length);
   };
-
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(prev => (prev - 1 + testimonials.length) % testimonials.length);
   };
-
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
-
-  return (
-    <section className="py-20 bg-gradient-to-br from-yellow-50 via-white to-sky-50 relative overflow-hidden">
+  return <section className="py-20 bg-gradient-to-br from-yellow-50 via-white to-sky-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-20 w-20 h-20 bg-yellow-300/20 rounded-full animate-bounce"></div>
@@ -83,9 +69,7 @@ const Testimonials = () => {
             
             <div className="relative z-10">
               <div className="flex items-center justify-center mb-6">
-                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-yellow-500 fill-current mr-1" />
-                ))}
+                {[...Array(testimonials[currentIndex].rating)].map((_, i) => <Star key={i} className="w-6 h-6 text-yellow-500 fill-current mr-1" />)}
               </div>
               
               <p className="text-xl lg:text-2xl text-gray-700 text-center leading-relaxed mb-8 italic">
@@ -106,55 +90,23 @@ const Testimonials = () => {
 
           {/* Navigation */}
           <div className="flex justify-center items-center mt-8 space-x-4">
-            <button
-              onClick={prevSlide}
-              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-sky-50 transition-colors group border border-sky-100"
-            >
+            <button onClick={prevSlide} className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-sky-50 transition-colors group border border-sky-100">
               <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-blue-600" />
             </button>
             
             <div className="flex space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+              {testimonials.map((_, index) => <button key={index} onClick={() => setCurrentIndex(index)} className={`w-3 h-3 rounded-full transition-colors ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'}`} />)}
             </div>
             
-            <button
-              onClick={nextSlide}
-              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-sky-50 transition-colors group border border-sky-100"
-            >
+            <button onClick={nextSlide} className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-sky-50 transition-colors group border border-sky-100">
               <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-blue-600" />
             </button>
           </div>
 
           {/* Thumbnail previews */}
-          <div className="mt-8 grid grid-cols-2 lg:grid-cols-5 gap-4">
-            {testimonials.map((testimonial, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`p-4 rounded-2xl text-center transition-all duration-300 border ${
-                  index === currentIndex 
-                    ? 'bg-gradient-to-br from-yellow-100 to-sky-100 shadow-lg scale-105 border-blue-200' 
-                    : 'bg-white shadow-md hover:shadow-lg hover:scale-105 border-gray-100'
-                }`}
-              >
-                <div className="text-2xl mb-2">{testimonial.avatar}</div>
-                <div className="text-sm font-semibold text-gray-800 truncate">{testimonial.name}</div>
-                <div className="text-xs text-gray-600 truncate">{testimonial.role}</div>
-              </button>
-            ))}
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Testimonials;
