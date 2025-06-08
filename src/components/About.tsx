@@ -1,102 +1,94 @@
 
-import { Award, Clock, Users, Heart, BookOpen, Smile } from 'lucide-react';
+import { Award, Heart, Users, Sparkles } from 'lucide-react';
 
 const About = () => {
-  const features = [
-    {
-      icon: Award,
-      title: "Профессиональный опыт",
-      description: "Многолетний опыт преподавания английского языка различным возрастным группам"
-    },
-    {
-      icon: Heart,
-      title: "Работа с детьми с РАС",
-      description: "Специализированные методики для детей с расстройствами аутистического спектра"
-    },
-    {
-      icon: Users,
-      title: "Индивидуальный подход",
-      description: "Персональные программы обучения для каждого ученика"
-    },
-    {
-      icon: BookOpen,
-      title: "Современные методики",
-      description: "Использование актуальных и эффективных методов преподавания"
-    },
-    {
-      icon: Clock,
-      title: "Гибкий график",
-      description: "Удобное время занятий, подстраиваемся под ваш распорядок"
-    },
-    {
-      icon: Smile,
-      title: "Дружелюбная атмосфера",
-      description: "Создаю комфортную и позитивную среду для изучения языка"
-    }
-  ];
-
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 relative overflow-hidden">
+      {/* Background with image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+        }}
+      ></div>
+      
+      {/* Overlay gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-green-900/80"></div>
+      
+      {/* Floating elements */}
+      <div className="absolute top-20 left-10 w-16 h-16 bg-yellow-400/20 rounded-full animate-pulse"></div>
+      <div className="absolute bottom-40 right-20 w-20 h-20 bg-blue-400/20 rounded-full animate-pulse delay-150"></div>
+      <div className="absolute top-1/2 right-10 w-12 h-12 bg-green-400/20 rounded-full animate-pulse delay-300"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            О школе <span className="text-blue-600">Yellow Submarine</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            О школе <span className="text-yellow-400">Yellow Submarine</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Наша школа — это место, где английский язык изучается с радостью и энтузиазмом. 
-            Мы создаем уникальную атмосферу, где каждый ученик чувствует себя комфортно и уверенно.
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+            Добро пожаловать в мир увлекательного изучения английского языка! 
+            Наша школа — это место, где каждый ученик находит свой уникальный путь к успеху.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <feature.icon className="text-white" size={24} />
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8 animate-fade-in">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8">
+              <h3 className="text-3xl font-bold text-white mb-6">Кто я такая?</h3>
+              <div className="space-y-4 text-gray-200">
+                <p className="leading-relaxed">
+                  Меня зовут Мария, и я — основатель школы английского языка "Yellow Submarine". 
+                  Уже более 5 лет я помогаю людям открывать для себя мир английского языка.
+                </p>
+                <p className="leading-relaxed">
+                  Моя специализация — работа с детьми, взрослыми и особенными детьми с РАС. 
+                  Я верю, что каждый человек способен освоить язык, нужен лишь правильный подход!
+                </p>
+                <p className="leading-relaxed">
+                  Мой метод основан на создании дружелюбной атмосферы, где ошибки — это часть обучения, 
+                  а успехи празднуются вместе.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">{feature.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
             </div>
-          ))}
+          </div>
+
+          {/* Right Content - Stats */}
+          <div className="grid grid-cols-2 gap-6 animate-scale-in">
+            <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
+              <Users className="mx-auto mb-4 text-white" size={40} />
+              <div className="text-3xl font-bold text-white mb-2">150+</div>
+              <div className="text-white font-medium">Довольных учеников</div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
+              <Award className="mx-auto mb-4 text-white" size={40} />
+              <div className="text-3xl font-bold text-white mb-2">5+</div>
+              <div className="text-white font-medium">Лет опыта</div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
+              <Heart className="mx-auto mb-4 text-white" size={40} />
+              <div className="text-3xl font-bold text-white mb-2">95%</div>
+              <div className="text-white font-medium">Успешных результатов</div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-pink-500 to-red-500 rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
+              <Sparkles className="mx-auto mb-4 text-white" size={40} />
+              <div className="text-3xl font-bold text-white mb-2">24/7</div>
+              <div className="text-white font-medium">Поддержка учеников</div>
+            </div>
+          </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 animate-scale-in">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-6">
-                Почему именно <span className="text-yellow-600">Yellow Submarine</span>?
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-yellow-500 rounded-full flex-shrink-0 mt-1"></div>
-                  <p className="text-gray-700"><strong>Онлайн и оффлайн:</strong> Выбирайте удобный формат обучения</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-500 rounded-full flex-shrink-0 mt-1"></div>
-                  <p className="text-gray-700"><strong>Индивидуальный подход:</strong> Каждая программа адаптирована под ученика</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-500 rounded-full flex-shrink-0 mt-1"></div>
-                  <p className="text-gray-700"><strong>Специализация РАС:</strong> Опыт работы с особенными детьми</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-purple-500 rounded-full flex-shrink-0 mt-1"></div>
-                  <p className="text-gray-700"><strong>Результативность:</strong> Видимые результаты уже через месяц</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-yellow-200 via-blue-200 to-green-200 rounded-2xl h-80 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🌊📚✨</div>
-                  <p className="text-gray-700 font-semibold text-lg">Погружение в мир английского</p>
-                </div>
-              </div>
-            </div>
+        {/* Mission Statement */}
+        <div className="mt-16 text-center animate-fade-in">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-4">Моя миссия</h3>
+            <p className="text-lg text-gray-200 leading-relaxed">
+              Сделать изучение английского языка доступным, интересным и эффективным для каждого. 
+              Помочь людям преодолеть языковые барьеры и открыть новые возможности в жизни и карьере.
+            </p>
           </div>
         </div>
       </div>

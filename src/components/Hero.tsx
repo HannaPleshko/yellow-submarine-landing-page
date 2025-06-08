@@ -10,6 +10,14 @@ const Hero = () => {
         <div className="absolute top-40 right-20 w-16 h-16 bg-blue-300/30 rounded-full animate-bounce delay-150"></div>
         <div className="absolute bottom-40 left-20 w-24 h-24 bg-green-300/30 rounded-full animate-bounce delay-300"></div>
         <div className="absolute bottom-20 right-10 w-12 h-12 bg-purple-300/30 rounded-full animate-bounce delay-500"></div>
+        
+        {/* Background Pattern */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        ></div>
       </div>
 
       <div className="container mx-auto px-4 pt-24 pb-12 relative z-10">
@@ -67,26 +75,43 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Image/Visual */}
+          {/* Right Content - Maria's Photo */}
           <div className="relative animate-scale-in">
             <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-yellow-400 via-blue-400 to-green-400 rounded-3xl shadow-2xl relative overflow-hidden">
-                {/* Submarine illustration using CSS */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-8xl animate-bounce">🟡</div>
+              {/* Background decorative elements */}
+              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-yellow-400 to-blue-400 rounded-3xl transform rotate-3 opacity-20"></div>
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-purple-400 rounded-3xl transform -rotate-2 opacity-20"></div>
+              
+              {/* Main photo container */}
+              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <img 
+                  src="/lovable-uploads/34c291e0-7c94-46ce-a0b1-d6f7b1875f54.png" 
+                  alt="Мария - преподаватель английского языка Yellow Submarine"
+                  className="w-full h-96 object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                
+                {/* Floating elements */}
+                <div className="absolute top-4 right-4 bg-yellow-400 text-white p-2 rounded-full animate-bounce">
+                  🌟
                 </div>
-                <div className="absolute bottom-8 left-8 right-8 text-center">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4">
-                    <div className="flex items-center justify-center space-x-2 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} size={20} className="text-yellow-500 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-gray-800 font-semibold">
-                      "Лучший преподаватель! Дочка с удовольствием изучает английский"
-                    </p>
-                    <p className="text-gray-600 text-sm mt-1">— Анна, мама ученицы</p>
+                <div className="absolute bottom-4 left-4 bg-blue-500 text-white p-2 rounded-full animate-bounce delay-200">
+                  📚
+                </div>
+              </div>
+              
+              {/* Testimonial */}
+              <div className="absolute -bottom-8 left-8 right-8">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} size={16} className="text-yellow-500 fill-current" />
+                    ))}
                   </div>
+                  <p className="text-gray-800 font-semibold text-sm text-center">
+                    "Лучший преподаватель! Дочка с удовольствием изучает английский"
+                  </p>
+                  <p className="text-gray-600 text-xs mt-1 text-center">— Анна, мама ученицы</p>
                 </div>
               </div>
             </div>
