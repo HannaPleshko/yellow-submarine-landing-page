@@ -53,17 +53,17 @@ const Pricing = () => {
         "Материалы включены",
         "Дружественная атмосфера"
       ],
-      color: "from-green-500 to-green-600",
+      color: "from-sky-500 to-sky-600",
       popular: false
     }
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
+    <section id="pricing" className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            <span className="text-indigo-600">Цены</span> на обучение
+            <span className="text-blue-600">Цены</span> на обучение
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Прозрачные цены без скрытых платежей. Выберите подходящий вариант обучения.
@@ -74,7 +74,7 @@ const Pricing = () => {
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in ${
+              className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in border border-sky-100 ${
                 plan.popular ? 'ring-4 ring-yellow-400 ring-opacity-50' : ''
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
@@ -112,7 +112,7 @@ const Pricing = () => {
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-5 h-5 bg-sky-500 rounded-full flex items-center justify-center flex-shrink-0">
                         <Check size={12} className="text-white" />
                       </div>
                       <span className="text-gray-700">{feature}</span>
@@ -143,7 +143,7 @@ const Pricing = () => {
 
         {/* Additional Info */}
         <div className="mt-16 text-center animate-fade-in">
-          <div className="bg-gradient-to-r from-yellow-100 to-yellow-200 rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-yellow-100 to-sky-100 rounded-2xl p-8 max-w-4xl mx-auto border border-blue-200">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
               🎁 Специальное предложение!
             </h3>

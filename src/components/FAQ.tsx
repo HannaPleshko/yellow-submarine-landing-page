@@ -33,7 +33,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-200/20 rounded-full animate-pulse"></div>
@@ -43,7 +43,7 @@ const FAQ = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            Часто задаваемые <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">вопросы</span>
+            Часто задаваемые <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600">вопросы</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ответы на самые популярные вопросы о занятиях в Yellow Submarine
@@ -57,14 +57,14 @@ const FAQ = () => {
               className="mb-4 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-sky-100">
                 <button
-                  className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                  className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-sky-50 transition-colors"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 >
                   <span className="text-lg font-semibold text-gray-800 pr-4">{faq.question}</span>
                   <ChevronDown 
-                    className={`w-6 h-6 text-yellow-500 transition-transform duration-300 flex-shrink-0 ${
+                    className={`w-6 h-6 text-blue-500 transition-transform duration-300 flex-shrink-0 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />

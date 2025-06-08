@@ -57,18 +57,18 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-50 via-white to-blue-50 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-yellow-50 via-white to-sky-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-20 w-20 h-20 bg-yellow-300/20 rounded-full animate-bounce"></div>
         <div className="absolute bottom-10 right-20 w-16 h-16 bg-blue-300/20 rounded-full animate-bounce delay-200"></div>
-        <div className="absolute top-1/2 left-10 w-12 h-12 bg-green-300/20 rounded-full animate-bounce delay-300"></div>
+        <div className="absolute top-1/2 left-10 w-12 h-12 bg-sky-300/20 rounded-full animate-bounce delay-300"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            Отзывы <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">учеников</span>
+            Отзывы <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600">учеников</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Что говорят о занятиях в Yellow Submarine
@@ -77,7 +77,7 @@ const Testimonials = () => {
 
         <div className="max-w-4xl mx-auto relative">
           {/* Main testimonial */}
-          <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 relative overflow-hidden animate-fade-in">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 relative overflow-hidden animate-fade-in border border-sky-100">
             {/* Quote decoration */}
             <Quote className="absolute top-8 left-8 w-12 h-12 text-yellow-300/50" />
             
@@ -93,7 +93,7 @@ const Testimonials = () => {
               </p>
               
               <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-2xl">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-sky-500 rounded-full flex items-center justify-center text-2xl">
                   {testimonials[currentIndex].avatar}
                 </div>
                 <div className="text-center">
@@ -108,9 +108,9 @@ const Testimonials = () => {
           <div className="flex justify-center items-center mt-8 space-x-4">
             <button
               onClick={prevSlide}
-              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-50 transition-colors group"
+              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-sky-50 transition-colors group border border-sky-100"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-yellow-600" />
+              <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-blue-600" />
             </button>
             
             <div className="flex space-x-2">
@@ -119,7 +119,7 @@ const Testimonials = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-yellow-500' : 'bg-gray-300'
+                    index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'
                   }`}
                 />
               ))}
@@ -127,9 +127,9 @@ const Testimonials = () => {
             
             <button
               onClick={nextSlide}
-              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-50 transition-colors group"
+              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-sky-50 transition-colors group border border-sky-100"
             >
-              <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-yellow-600" />
+              <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-blue-600" />
             </button>
           </div>
 
@@ -139,10 +139,10 @@ const Testimonials = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`p-4 rounded-2xl text-center transition-all duration-300 ${
+                className={`p-4 rounded-2xl text-center transition-all duration-300 border ${
                   index === currentIndex 
-                    ? 'bg-gradient-to-br from-yellow-100 to-orange-100 shadow-lg scale-105' 
-                    : 'bg-white shadow-md hover:shadow-lg hover:scale-105'
+                    ? 'bg-gradient-to-br from-yellow-100 to-sky-100 shadow-lg scale-105 border-blue-200' 
+                    : 'bg-white shadow-md hover:shadow-lg hover:scale-105 border-gray-100'
                 }`}
               >
                 <div className="text-2xl mb-2">{testimonial.avatar}</div>

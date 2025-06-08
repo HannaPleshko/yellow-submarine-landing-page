@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
+    <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-lg z-50 transition-all duration-300 border-b border-sky-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-2">
@@ -23,7 +23,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-800">Yellow Submarine</h1>
-              <p className="text-sm text-gray-600">Английский с Марией</p>
+              <p className="text-sm text-blue-600">Английский с Марией</p>
             </div>
           </div>
 
@@ -33,32 +33,32 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-yellow-600 transition-colors duration-300 font-medium relative group"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-sky-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} className="text-blue-600" /> : <Menu size={24} className="text-blue-600" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mb-4">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mb-4 border border-sky-100">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-50 rounded-md transition-colors duration-300"
+                  className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-sky-50 rounded-md transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
