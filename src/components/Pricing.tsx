@@ -1,4 +1,3 @@
-
 import { Check, Star, Zap } from 'lucide-react';
 
 const Pricing = () => {
@@ -74,7 +73,7 @@ const Pricing = () => {
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500 animate-fade-in border border-sky-100/50 hover:shadow-2xl group ${
+              className={`relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500 animate-fade-in border border-sky-100/50 hover:shadow-2xl group flex flex-col ${
                 plan.popular ? 'ring-4 ring-amber-300/50' : ''
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
@@ -109,8 +108,8 @@ const Pricing = () => {
               </div>
 
               {/* Features */}
-              <div className="p-6">
-                <ul className="space-y-3 mb-8">
+              <div className="p-6 flex flex-col flex-grow">
+                <ul className="space-y-3 flex-grow">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-3 group">
                       <div className="w-5 h-5 bg-sky-400 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -124,7 +123,7 @@ const Pricing = () => {
                 {/* CTA Button */}
                 <a
                   href="#contact"
-                  className={`w-full bg-gradient-to-r ${plan.color} text-white py-3 px-6 rounded-2xl font-semibold text-center block hover:shadow-lg transform hover:scale-105 transition-all duration-300 group-hover:shadow-xl ${
+                  className={`w-full bg-gradient-to-r ${plan.color} text-white py-3 px-6 rounded-2xl font-semibold text-center block hover:shadow-lg transform hover:scale-105 transition-all duration-300 group-hover:shadow-xl mt-8 ${
                     plan.popular ? 'animate-glow' : ''
                   }`}
                 >

@@ -1,4 +1,3 @@
-
 import { Instagram, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
@@ -9,16 +8,13 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">🌊</span>
-              </div>
               <div>
-                <h3 className="text-xl font-bold">Yellow Submarine</h3>
-                <p className="text-gray-400 text-sm">Английский с Марией</p>
+                <h1 className="text-[30px] font-script font-bold text-white group-hover:text-blue-600 transition-colors">Yellow Submarine</h1>
               </div>
+
             </div>
             <p className="text-gray-300 leading-relaxed">
-              Школа английского языка для детей, взрослых и детей с РАС. 
+              Школа английского языка для детей, взрослых и детей с РАС.
               Делаем изучение языка увлекательным и эффективным!
             </p>
           </div>
@@ -39,16 +35,16 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Связаться со мной</h4>
             <div className="space-y-3">
-              <a 
-                href="https://instagram.com/tvoi_engtutor_" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/tvoi_engtutor_"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-300 hover:text-pink-400 transition-colors"
               >
                 <Instagram size={18} />
                 <span>@tvoi_engtutor_</span>
               </a>
-              <a 
+              <a
                 href="mailto:maria@yellowsubmarine.by"
                 className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors"
               >

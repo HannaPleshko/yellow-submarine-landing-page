@@ -1,4 +1,3 @@
-
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
@@ -18,12 +17,8 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-lg animate-float">🌊</span>
-            </div>
             <div>
-              <h1 className="text-xl font-serif font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Yellow Submarine</h1>
-              <p className="text-sm text-blue-500 font-script">Английский с Марией</p>
+              <h1 className="text-[30px] font-script font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Yellow Submarine</h1>
             </div>
           </div>
 

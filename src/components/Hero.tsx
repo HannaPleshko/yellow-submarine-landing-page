@@ -1,4 +1,3 @@
-
 import { Star, Users, Globe, Heart, ArrowRight, Play } from 'lucide-react';
 import { useState } from 'react';
 
@@ -45,12 +44,14 @@ const Hero = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-serif font-bold text-gray-800 leading-tight">
-                Привет! Я <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-500 animate-glow font-script">Мария</span>
+                Привет! Я
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-500 font-script">Мария</span>
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed font-light">
                 Преподаватель английского языка в школе{' '}
-                <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-400 font-serif">Yellow Submarine</span> 🌊
+                <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-400 font-script text-[36px] lg:text-[40px]">Yellow Submarine</span> 🌊
               </p>
             </div>
 
@@ -94,64 +95,35 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Maria's Photo */}
-          <div className="relative animate-scale-in">
-            <div className="relative">
-              {/* Background decorative elements */}
-              <div className="absolute -top-6 -left-6 w-full h-full bg-gradient-to-br from-amber-300/20 to-blue-300/20 rounded-3xl transform rotate-3 animate-float"></div>
-              <div className="absolute -bottom-6 -right-6 w-full h-full bg-gradient-to-br from-sky-300/20 to-amber-300/20 rounded-3xl transform -rotate-2 animate-float delay-150"></div>
-              
-              {/* Main photo container */}
-              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-white hover:shadow-3xl transition-all duration-500 group">
-                <img 
-                  src="/lovable-uploads/34c291e0-7c94-46ce-a0b1-d6f7b1875f54.png" 
-                  alt="Мария - преподаватель английского языка Yellow Submarine"
-                  className="w-full h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-                
-                {/* Floating elements */}
-                <div className="absolute top-6 right-6 bg-gradient-to-r from-amber-300 to-amber-400 text-white p-3 rounded-full animate-float shadow-lg">
-                  🌟
-                </div>
-                <div className="absolute bottom-6 left-6 bg-gradient-to-r from-blue-400 to-sky-400 text-white p-3 rounded-full animate-float delay-200 shadow-lg">
-                  📚
-                </div>
-                <div className="absolute top-1/2 left-0 transform -translate-x-1/2 bg-gradient-to-r from-sky-400 to-blue-400 text-white p-2 rounded-full animate-glow shadow-lg">
-                  ✨
-                </div>
-              </div>
-              
-              {/* Testimonial */}
-              <div className="absolute -bottom-12 left-8 right-8">
-                <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-blue-100/50 hover:shadow-2xl transition-all duration-300">
-                  <div className="flex items-center justify-center space-x-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} size={18} className="text-amber-400 fill-current animate-glow" style={{ animationDelay: `${star * 0.1}s` }} />
-                    ))}
-                  </div>
-                  <p className="text-gray-800 font-medium text-sm text-center mb-2 font-serif">
-                    "Лучший преподаватель! Дочка с удовольствием изучает английский"
-                  </p>
-                  <p className="text-gray-500 text-xs text-center">— Анна, мама ученицы</p>
-                </div>
-              </div>
+          {/* Right Content - Maria's Photo - Designer Version */}
+          <div className="relative flex items-center justify-center lg:h-[550px] animate-scale-in">
+            {/* Layer 1: Blurred background shapes */}
+            <div className="absolute w-64 h-64 bg-amber-300/40 rounded-full -top-10 -right-10 blur-2xl animate-float"></div>
+            <div className="absolute w-56 h-56 bg-sky-300/40 rounded-full -bottom-10 -left-10 blur-2xl animate-float delay-300"></div>
+
+            {/* Layer 2: Rotated background panel */}
+            <div className="absolute w-full h-[520px] bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-lg rounded-3xl transform -rotate-6 shadow-xl"></div>
+
+            {/* Layer 3: Main Photo */}
+            <div className="relative w-[340px] h-[440px] lg:w-[380px] lg:h-[480px] rounded-3xl shadow-2xl overflow-hidden transform rotate-3 border-4 border-white hover:shadow-3xl transition-all duration-500 group">
+              <img 
+                src="/lovable-uploads/34c291e0-7c94-46ce-a0b1-d6f7b1875f54.png" 
+                alt="Мария - преподаватель английского языка Yellow Submarine"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+            </div>
+
+            {/* Layer 4: Floating UI elements */}
+            <div className="absolute -top-8 left-0 bg-white/80 backdrop-blur-md p-3 rounded-2xl shadow-lg animate-float flex items-center space-x-2">
+              <Heart className="text-sky-500" size={20} />
+              <p className="text-sm font-bold text-gray-600">Индивидуальный подход</p>
+            </div>
+            <div className="absolute -bottom-6 right-0 bg-white/80 backdrop-blur-md p-3 rounded-2xl shadow-lg animate-float delay-200 flex items-center space-x-2">
+              <Star className="text-amber-500" size={20} />
+              <p className="text-sm font-bold text-gray-600">Высокие результаты</p>
             </div>
           </div>
-        </div>
-
-        {/* Animated Statistics */}
-        <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {achievements.map((item, index) => (
-            <div 
-              key={index}
-              className={`bg-gradient-to-br ${item.color} rounded-3xl p-6 text-center text-white transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl animate-slide-up group cursor-pointer`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <item.icon className="mx-auto mb-3 group-hover:scale-110 transition-transform" size={32} />
-              <div className="text-2xl lg:text-3xl font-bold mb-2 font-serif">{item.number}</div>
-              <div className="text-sm font-medium opacity-90">{item.text}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

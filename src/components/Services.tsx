@@ -1,4 +1,3 @@
-
 import { User, Users, Heart, Video, MapPin, Clock } from 'lucide-react';
 
 const Services = () => {
@@ -124,7 +123,7 @@ const Services = () => {
           className="relative rounded-2xl shadow-xl p-8 lg:p-12 animate-scale-in overflow-hidden bg-white"
         >
           <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            Преимущества обучения в <span className="text-yellow-600">Yellow Submarine</span>
+            Преимущества обучения в <span className="text-yellow-600 font-script text-[40px]">Yellow Submarine</span>
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {advantages.map((advantage, index) => (
